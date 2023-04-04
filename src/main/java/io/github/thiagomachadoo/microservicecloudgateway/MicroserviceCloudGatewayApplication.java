@@ -23,6 +23,8 @@ public class MicroserviceCloudGatewayApplication {
 		return locatorBuilder
 				.routes()
 				.route(r -> r.path("/clientes/**").uri("lb://msclientes"))
+				.route(r -> r.path("/cartoes/**").uri("lb://mscartoes"))
+				.route(r -> r.path("/avaliacoes/**").uri("lb://msavaliadorcredito"))
 				.build();
 	}
 
